@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact - JianDev Portfolio</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+
+    <header class="nav-header" id="nav-header">
+        <nav class="navbar container">
+            <a href="/index.html" class="logo">JianDev</a>
+            <ul class="nav-links">
+                <li><a href="/index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle Dark Mode" role="button"
+                    tabindex="0">
+                    <i class="fas fa-sun"></i>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="big-header container" style="padding-top: 120px; padding-bottom: 1rem; text-align:center;">
+        <h2 class="section-title logo">Get In Touch</h2>
+        <p class="section-subtitle" style="max-width: 600px; margin: 0 auto 2rem;">
+            Have a question or want to work together? Feel free to reach out!
+        </p>
+    </section>
+
+    <section class="container" style="max-width: 600px; margin: 0 auto 4rem auto;">
+
+        <div id="form-message"
+            style="color: var(--color-primary); font-weight: 600; margin-bottom: 1rem; display:none;">Message sent
+            successfully!</div>
+
+        <form id="contact-form" autocomplete="off" novalidate>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name"
+                style="width:100%; padding:0.6rem 1rem; border-radius: 10px; border: 2px solid var(--color-primary); margin-bottom: 1rem; font-size:1rem;" />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Your email"
+                style="width:100%; padding:0.6rem 1rem; border-radius: 10px; border: 2px solid var(--color-primary); margin-bottom: 1rem; font-size:1rem;" />
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required placeholder="Subject"
+                style="width:100%; padding:0.6rem 1rem; border-radius: 10px; border: 2px solid var(--color-primary); margin-bottom: 1rem; font-size:1rem;" />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required rows="5" placeholder="Your message"
+                style="width:100%; padding:0.6rem 1rem; border-radius: 10px; border: 2px solid var(--color-primary); margin-bottom: 2rem; font-size:1rem;"></textarea>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; text-align: center;">Send Message</button>
+        </form>
+
+        <div style="margin-top: 2rem; font-size: 0.95rem; color: var(--color-text); text-align:center;">
+            <p><strong>Email:</strong> <a href="mailto:contact@jiandev.com"
+                    style="color: var(--color-primary); text-decoration:none;">contact@jiandev.com</a></p>
+            <p><strong>Phone:</strong> (123) 456-7890</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; <span id="copyright-year"></span> JianDev. All rights reserved.</p>
+            <!-- social media links -->
+            <div class="footer-social">
+                <a href="#" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" aria-label="Twitter" title="Twitter" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/footer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form');
+            const messageBox = document.getElementById('form-message');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Simple form validation (you can expand this)
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+
+                // Simulate async form submission
+                setTimeout(() => {
+                    messageBox.style.display = 'block';
+
+                    // Clear inputs
+                    form.reset();
+
+                    // Hide message after 5 sec
+                    setTimeout(() => {
+                        messageBox.style.display = 'none';
+                    }, 5000);
+                }, 700);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

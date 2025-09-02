@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JianDev Portfolio</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" />
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+    <header class="nav-header" id="nav-header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">JianDev</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="/pages/about.html" class="nav-link">About</a></li>
+                <li><a href="/pages/projects.html" class="nav-link">Projects</a></li>
+                <li><a href="/pages/contact.html" class="nav-link">Contact</a></li>
+                <li class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle Dark Mode" role="button"
+                    tabindex="0">
+                    <i class="fas fa-sun"></i><!-- toggles to fa-moon -->
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero container space" id="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">I'm <span id="animated-text"></span></h1>
+            <p class="hero-intro">
+                I craft elegant digital experiences, combining clean code with intuitive design for
+                next-generation web applications.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="view-projects-btn">
+                    View Projects
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+
+                    </svg>
+                </button>
+                <button class="btn btn-secondary">
+                    Download CV
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+
+                    </svg>
+                </button>
+            </div>
+            <p class="availability-status">Available for freelance and full-time opportunities</p>
+        </div>
+        <!-- Added professional laptop image and status indicator -->
+        <div class="hero-visual">
+            <div class="laptop-container">
+                <img src="/img/profile.jpg?height=400&width=400" alt="Professional workspace" class="laptop-image" />
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span>Currently working on exciting projects</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SKILLS & EXPERTISE -->
+    <section class="skills container">
+        <h3 class="section-title ">Skills &amp; Expertise</h3>
+        <p class="section-subtitle">The tools and technologies I work with to bring ideas to life</p>
+        <div class="skill-cards slider" style="
+        --width:150px;
+        --height: 100px;
+        --quantity: 8;
+        ">
+            <div class="list">
+                <div class="skill-card item" style="--position: 1" title="HTML"><i
+                        class="fab fa-html5"></i><span>HTML</span></div>
+                <div class="skill-card item" style="--position: 2" title="CSS"><i
+                        class="fab fa-css3-alt"></i><span>CSS</span></div>
+                <div class="skill-card item" style="--position: 3" title="JavaScript"><i
+                        class="fab fa-js"></i><span>JavaScript</span></div>
+                <div class="skill-card item" style="--position: 4" title="Python"><i
+                        class="fab fa-python"></i><span>Python</span></div>
+                <div class="skill-card item" style="--position: 5" title="Command Line"><i
+                        class="fas fa-terminal"></i><span>CLI</span></div>
+                <div class="skill-card item" style="--position: 6" title="Networking"><i
+                        class="fas fa-network-wired"></i><span>Networking</span></div>
+                <div class="skill-card item" style="--position: 7" title="Figma"><i
+                        class="fab fa-figma"></i><span>Figma</span></div>
+                <div class="skill-card item" style="--position: 8" title="TypeScript"><i
+                        class="fab fa-js-square"></i><span>TypeScript</span></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FEATURED PROJECTS -->
+    <section class="featured-projects container" id="featured-projects">
+        <h3 class="section-title">Featured Projects</h3>
+        <p class="section-subtitle">A selection of my recent work and personal projects</p>
+        <div class="project-cards">
+            <article class="project-card">
+                <div class="project-image" style="background-image:url('img/project1.jpg');"></div>
+                <h4 class="project-title">Portfolio Website</h4>
+                <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <div class="project-tools">
+                    <span>HTML</span> · <span>CSS</span> · <span>JavaScript</span>
+                </div>
+                <a href="/pages/projects.html" style="text-align: center;" class="btn btn-outline">View
+                    Project</a>
+            </article>
+            <article class="project-card">
+                <div class="project-image" style="background-image:url('img/project2.jpg');"></div>
+                <h4 class="project-title">Project Title Example</h4>
+                <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <div class="project-tools">
+                    <span>Python</span> · <span>CLI</span>
+                </div>
+                <a href="/pages/projects.html" style="text-align: center;" class="btn btn-outline">View
+                    Project</a>
+            </article>
+            <article class="project-card">
+                <div class="project-image" style="background-image:url('img/project3.jpg');"></div>
+                <h4 class="project-title">Project Title Example</h4>
+                <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <div class="project-tools">
+                    <span>Figma</span> · <span>TypeScript</span>
+                </div>
+                <a href="/pages/projects.html" style="text-align: center;" class="btn btn-outline">View
+                    Project</a>
+            </article>
+        </div>
+    </section>
+
+
+    <!-- SUBFOOTER -->
+    <section class="subfooter container">
+        <h2>Let's Work Together</h2>
+        <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your
+            vision.</p>
+        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; <span id="copyright-year"></span> JianDev. All rights reserved.</p>
+            <!-- social media links -->
+            <div class="footer-social">
+                <a href="#" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" aria-label="Twitter" title="Twitter" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+
+
+</html>

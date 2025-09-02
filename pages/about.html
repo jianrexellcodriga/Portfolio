@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About - JianDev Portfolio</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+
+    <!-- NAVIGATION (same as index.html) -->
+    <header class="nav-header" id="nav-header">
+        <nav class="navbar container">
+            <a href="/index.html" class="logo">JianDev</a>
+            <ul class="nav-links">
+                <li><a href="/index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle Dark Mode" role="button"
+                    tabindex="0">
+                    <i class="fas fa-sun"></i>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BIG HEADER (with parallax maybe using CSS or subtle scroll, simplified here) -->
+    <section class="big-header container" style="padding-top: 120px; padding-bottom: 2rem; text-align:center;">
+        <h2 class="section-title logo">ABOUT ME</h2>
+        <p class="section-subtitle" style="max-width: 600px; margin: 0 auto 2rem;">Get to know my background, skills,
+            and what drives my passion for programming and design.</p>
+        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+    </section>
+
+    <!-- WHO AM I SECTION -->
+    <section class="container" style="max-width: 900px; margin: 2rem auto 4rem auto;">
+        <h3 class="section-title" style="text-align:left; margin-bottom:1rem;">Who Am I</h3>
+        <div style="display:flex; flex-wrap: wrap; gap:1.5rem; align-items: center;">
+
+            <img src="img/profile-square.jpg" alt="JianDev Portrait"
+                style="width:180px; height:180px; object-fit: cover; border-radius: 20px; box-shadow: 0 0 12px var(--color-primary);" />
+
+            <p
+                style="flex:1; font-weight: 400; font-size: clamp(1rem, 1vw + 0.25rem, 1.125rem); color: var(--color-text);">
+                Hello! I'm JianDev, a passionate frontend developer who loves crafting intuitive and
+                beautiful digital experiences.
+                With a strong foundation in programming and a sharp eye for designing, I enjoy transforming ideas into
+                functional and elegant solutions.
+            </p>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="container" style="max-width: 900px; margin-bottom: 3rem;">
+        <h3 class="section-title" style="text-align:left; margin-bottom:1rem;">Education</h3>
+        <p style="font-weight: 400; font-size: 1rem; color: var(--color-text); margin-left: 1rem;">
+            B.S. Information Technology, St John Poul II College of Davao, 2025
+        </p>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <section class="container" style="max-width: 900px; margin-bottom: 6rem;">
+        <h3 class="section-title" style="text-align:left; margin-bottom:1rem;">Professional Experience</h3>
+        <p style="font-weight: 400; font-size: 1rem; color: var(--color-text); margin-left: 1rem;">
+            Frontend Development Intern, [Company Name], 2024 - Present
+        </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; <span id="copyright-year"></span> JianDev. All rights reserved.</p>
+            <!-- social media links -->
+            <div class="footer-social">
+                <a href="#" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" aria-label="Twitter" title="Twitter" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+
+</html>

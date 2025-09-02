@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects - JianDev Portfolio</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+
+    <header class="nav-header" id="nav-header">
+        <nav class="navbar container">
+            <a href="/index.html" class="logo">JianDev</a>
+            <ul class="nav-links">
+                <li><a href="/index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle Dark Mode" role="button"
+                    tabindex="0">
+                    <i class="fas fa-sun"></i>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BIG HEADER -->
+    <section class="big-header container" style="padding-top: 120px; padding-bottom: 1rem; text-align:center;">
+        <h2 class="section-title logo">My Projects</h2>
+        <p class="section-subtitle" style="max-width: 600px; margin: 0 auto 2rem;">
+            A collection of my work showcasing my skills in programming and UI Designing
+        </p>
+    </section>
+
+    <!-- SEARCH + FILTERS -->
+    <section class="container" style="max-width:900px; margin: 0 auto 3rem auto;">
+        <input type="text" id="project-search" placeholder="Search project by title, tools, or description..."
+            style="width:100%; padding: 0.75rem 1rem; border-radius: 12px; border: 2px solid var(--color-primary); font-size: 1rem;"
+            aria-label="Search projects" />
+
+        <div id="project-filter"
+            style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <button type="button" class="btn-filter active" data-filter="all">All</button>
+            <button type="button" class="btn-filter" data-filter="web-development">Web Development</button>
+            <button type="button" class="btn-filter" data-filter="web-application">Web Application</button>
+            <button type="button" class="btn-filter" data-filter="desktop-application">Desktop Application</button>
+        </div>
+    </section>
+
+    <!-- PROJECT CARDS -->
+    <section class="project-cards container" id="project-cards" style="max-width: 1000px; margin-bottom: 4rem;">
+
+        <article class="project-card" data-filter="web-development" data-skills="HTML CSS JavaScript">
+            <div class="project-image" style="background-image:url('img/project1.jpg');"></div>
+            <h4 class="project-title">Portfolio Website</h4>
+            <p class="project-description">A sleek responsive portfolio built with modern HTML, CSS, and vanilla
+                JavaScript.</p>
+            <div class="project-tools">
+                <span>HTML</span> · <span>CSS</span> · <span>JavaScript</span>
+            </div>
+            <button class="btn btn-outline">View Project</button>
+        </article>
+
+        <article class="project-card" data-filter="web-application" data-skills="Python CLI Networking">
+            <div class="project-image" style="background-image:url('img/project2.jpg');"></div>
+            <h4 class="project-title">Network Scanner</h4>
+            <p class="project-description">A Python CLI tool that scans networks and displays live results.</p>
+            <div class="project-tools">
+                <span>Python</span> · <span>CLI</span> · <span>Networking</span>
+            </div>
+            <button class="btn btn-outline">View Project</button>
+        </article>
+
+        <article class="project-card" data-filter="desktop-application" data-skills="Figma TypeScript">
+            <div class="project-image" style="background-image:url('img/project3.jpg');"></div>
+            <h4 class="project-title">Design Prototype</h4>
+            <p class="project-description">An interactive desktop app prototype designed in Figma, scripted with
+                TypeScript integration.</p>
+            <div class="project-tools">
+                <span>Figma</span> · <span>TypeScript</span>
+            </div>
+            <button class="btn btn-outline">View Project</button>
+        </article>
+
+        <!-- Add more projects as needed -->
+
+    </section>
+
+    <!-- SUBFOOTER -->
+    <section class="subfooter container">
+        <h2>Interested in Working Together?</h2>
+        <p>I'm always open to discussing product design work or partnership opportunities.</p>
+        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; <span id="copyright-year"></span> JianDev. All rights reserved.</p>
+            <!-- social media links -->
+            <div class="footer-social">
+                <a href="#" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" aria-label="Twitter" title="Twitter" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/footer.js"></script>
+    <script>
+        // Instant live search and filtering of projects
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('project-search');
+            const filterBtns = document.querySelectorAll('.btn-filter');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            let activeFilter = 'all';
+
+            function filterProjects() {
+                const search = searchInput.value.toLowerCase();
+
+                projectCards.forEach(card => {
+                    const title = card.querySelector('.project-title').textContent.toLowerCase();
+                    const description = card.querySelector('.project-description').textContent.toLowerCase();
+                    const skills = card.dataset.skills.toLowerCase();
+                    const category = card.dataset.filter;
+
+                    const matchesFilter = (activeFilter === 'all') || (category === activeFilter);
+                    const matchesSearch = title.includes(search) || description.includes(search) || skills.includes(search);
+
+                    if (matchesFilter && matchesSearch) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            // Filter button click
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    activeFilter = btn.dataset.filter;
+                    filterProjects();
+                });
+            });
+
+            // Search input
+            searchInput.addEventListener('input', filterProjects);
+        });
+    </script>
+</body>
+
+</html>
