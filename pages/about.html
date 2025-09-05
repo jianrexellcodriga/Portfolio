@@ -21,14 +21,53 @@
             <a href="/index.html" class="logo">JianDev</a>
             <ul class="nav-links">
                 <li><a href="/index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link active">About</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle Dark Mode" role="button"
-                    tabindex="0">
-                    <i class="fas fa-sun"></i>
-                </li>
+                <li><a href="/pages/about.html" class="nav-link active">About</a></li>
+                <li><a href="/pages/projects.html" class="nav-link">Projects</a></li>
+                <li><a href="/pages/contact.html" class="nav-link">Contact</a></li>
+    
+    
+                <t-theme mode="navbar"></t-theme>
+    
             </ul>
+    
+            <!-- Updated hamburger menu to use provided SVG icon -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+            <label for="nav-toggle" class="hamburger-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="currentColor">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                </svg>
+            </label>
+    
+            <!-- Updated sidebar with close icon inside -->
+            <div class="nav-sidebar">
+                <div class="sidebar-header">
+                    <label for="nav-toggle" class="close-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg>
+                    </label>
+                </div>
+                <ul class="sidebar-nav-links">
+                    <li><a href="index.html" class="sidebar-nav-link active">Home</a></li>
+                    <li><a href="/pages/about.html" class="sidebar-nav-link">About</a></li>
+                    <li><a href="/pages/projects.html" class="sidebar-nav-link">Projects</a></li>
+                    <li><a href="/pages/contact.html" class="sidebar-nav-link">Contact</a></li>
+    
+                </ul>
+                <div class="appearance-toggle">
+                    <t-theme mode="sidebar"></t-theme>
+    
+    
+    
+                </div>
+            </div>
+    
+            <!-- Made nav-overlay a label to enable click-outside-to-close functionality -->
+            <label for="nav-toggle" class="nav-overlay"></label>
+    
         </nav>
     </header>
 
@@ -45,7 +84,7 @@
         <h3 class="section-title" style="text-align:left; margin-bottom:1rem;">Who Am I</h3>
         <div style="display:flex; flex-wrap: wrap; gap:1.5rem; align-items: center;">
 
-            <img src="img/profile-square.jpg" alt="JianDev Portrait"
+            <img src="/img/profile_pic1.jpg" alt="JianDev Portrait"
                 style="width:180px; height:180px; object-fit: cover; border-radius: 20px; box-shadow: 0 0 12px var(--color-primary);" />
 
             <p
@@ -95,6 +134,8 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/footer.js"></script>
+    <script src="/js/components/theme_selector.js" defer></script>
+    <script src="/js/scroll-top.js" defer></script>
 </body>
 
 </html>

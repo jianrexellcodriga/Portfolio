@@ -14,20 +14,59 @@
 </head>
 
 <body>
-
+    <!-- NAVIGATION (same as index.html) -->
     <header class="nav-header" id="nav-header">
         <nav class="navbar container">
             <a href="/index.html" class="logo">JianDev</a>
             <ul class="nav-links">
                 <li><a href="/index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="projects.html" class="nav-link active">Projects</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle Dark Mode" role="button"
-                    tabindex="0">
-                    <i class="fas fa-sun"></i>
-                </li>
+                <li><a href="/pages/about.html" class="nav-link">About</a></li>
+                <li><a href="/pages/projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="/pages/contact.html" class="nav-link ">Contact</a></li>
+
+
+                <t-theme mode="navbar"></t-theme>
+
             </ul>
+
+            <!-- Updated hamburger menu to use provided SVG icon -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+            <label for="nav-toggle" class="hamburger-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="currentColor">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                </svg>
+            </label>
+
+            <!-- Updated sidebar with close icon inside -->
+            <div class="nav-sidebar">
+                <div class="sidebar-header">
+                    <label for="nav-toggle" class="close-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg>
+                    </label>
+                </div>
+                <ul class="sidebar-nav-links">
+                    <li><a href="index.html" class="sidebar-nav-link active">Home</a></li>
+                    <li><a href="/pages/about.html" class="sidebar-nav-link">About</a></li>
+                    <li><a href="/pages/projects.html" class="sidebar-nav-link">Projects</a></li>
+                    <li><a href="/pages/contact.html" class="sidebar-nav-link">Contact</a></li>
+
+                </ul>
+                <div class="appearance-toggle">
+                    <t-theme mode="sidebar"></t-theme>
+
+
+
+                </div>
+            </div>
+
+            <!-- Made nav-overlay a label to enable click-outside-to-close functionality -->
+            <label for="nav-toggle" class="nav-overlay"></label>
+
         </nav>
     </header>
 
@@ -39,18 +78,23 @@
         </p>
     </section>
 
-    <!-- SEARCH + FILTERS -->
-    <section class="container" style="max-width:900px; margin: 0 auto 3rem auto;">
-        <input type="text" id="project-search" placeholder="Search project by title, tools, or description..."
-            style="width:100%; padding: 0.75rem 1rem; border-radius: 12px; border: 2px solid var(--color-primary); font-size: 1rem;"
-            aria-label="Search projects" />
+    <!-- SEARCH + FILTERS Drop-Down-->
+    <section class="container search-section">
+        <div class="search-filter-row">
+            <!-- Search input -->
+            <input type="text" id="project-search" placeholder="Search project by title, tools, or description..."
+                aria-label="Search projects" />
 
-        <div id="project-filter"
-            style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <button type="button" class="btn-filter active" data-filter="all">All</button>
-            <button type="button" class="btn-filter" data-filter="web-development">Web Development</button>
-            <button type="button" class="btn-filter" data-filter="web-application">Web Application</button>
-            <button type="button" class="btn-filter" data-filter="desktop-application">Desktop Application</button>
+            <!-- Custom Dropdown Filter -->
+            <div class="custom-dropdown" id="project-filter">
+                <div class="selected">All</div>
+                <ul class="options">
+                    <li data-value="all" class="active">All</li>
+                    <li data-value="web-development">Web Development</li>
+                    <li data-value="web-application">Web Application</li>
+                    <li data-value="desktop-application">Desktop Application</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -58,35 +102,85 @@
     <section class="project-cards container" id="project-cards" style="max-width: 1000px; margin-bottom: 4rem;">
 
         <article class="project-card" data-filter="web-development" data-skills="HTML CSS JavaScript">
-            <div class="project-image" style="background-image:url('img/project1.jpg');"></div>
-            <h4 class="project-title">Portfolio Website</h4>
-            <p class="project-description">A sleek responsive portfolio built with modern HTML, CSS, and vanilla
-                JavaScript.</p>
-            <div class="project-tools">
-                <span>HTML</span> · <span>CSS</span> · <span>JavaScript</span>
+            <div class="project-image" style="background-image:url('/img/Personal\ Portfolio\ website.png');">
+                <span class="fallback-text">Personal Portfolio image</span>
             </div>
-            <button class="btn btn-outline">View Project</button>
+            <h4 class="project-title">Personal Portfolio Website</h4>
+            <p class="project-description">A sleek and modern responsive portfolio website powered by Vite and React.
+            </p>
+            <div class="project-tools">
+                <span>TypeScript</span> · <span>CSS</span> · <span>JavaScript</span> · <span>Html</span> ·
+                <span>React</span>
+                · <span>Vite</span>
+            </div>
+
         </article>
 
         <article class="project-card" data-filter="web-application" data-skills="Python CLI Networking">
-            <div class="project-image" style="background-image:url('img/project2.jpg');"></div>
-            <h4 class="project-title">Network Scanner</h4>
-            <p class="project-description">A Python CLI tool that scans networks and displays live results.</p>
-            <div class="project-tools">
-                <span>Python</span> · <span>CLI</span> · <span>Networking</span>
+            <div class="project-image" style="background-image:url('/img/POS\ Web\ App.png');">
+                <span class="fallback-text">Project Image</span>
             </div>
-            <button class="btn btn-outline">View Project</button>
+            <h4 class="project-title">POS System</h4>
+            <p class="project-description">
+                A hybrid cross-platform POS Web Application with auto-update support via GitHub. It includes Product,
+                Order, Courier, and Payment Management systems,
+                along with real-time analytics for sales and courier performance. Users can also download or print
+                detailed sales and analytics reports directly.
+            </p>
+
+            <div class="project-tools">
+                <span>TypeScript</span> · <span>Css</span> · <span>Tailwind Css</span> · <span>Swift</span> ·
+                <span>Java</span> · <span>JavaScript</span> · <span>Html</span> · <span>React</span> · <span>Vite</span>
+            </div>
+
         </article>
 
         <article class="project-card" data-filter="desktop-application" data-skills="Figma TypeScript">
-            <div class="project-image" style="background-image:url('img/project3.jpg');"></div>
-            <h4 class="project-title">Design Prototype</h4>
-            <p class="project-description">An interactive desktop app prototype designed in Figma, scripted with
-                TypeScript integration.</p>
-            <div class="project-tools">
-                <span>Figma</span> · <span>TypeScript</span>
+            <div class="project-image" style="background-image:url('/img/MP4\ Downloader.png');">
+                <span class="fallback-text">MP4 Downloader image</span>
             </div>
-            <button class="btn btn-outline">View Project</button>
+            <h4 class="project-title">MP4 Downloader</h4>
+            <p class="project-description">is a YouTube video downloader desktop application. It consists of a modern
+                frontend built with tkinter, and a Python
+                backend that uses `yt_dlp` to handle the video downloading.</p>
+            <div class="project-tools">
+                <span>Python</span> · <span>ffmpeg</span> · <span>.venv</span> · <span>tkinter</span> ·
+                <span>yt_dlp</span>
+            </div>
+
+        </article>
+
+        <article class="project-card" data-filter="desktop-application" data-skills="Figma TypeScript">
+            <div class="project-image" style="background-image:url('img/project4.jpg');">
+                <span class="fallback-text">ON GOING COMING SOON</span>
+            </div>
+            <h4 class="project-title">Auto Sorter</h4>
+            <p class="project-description">is a type of File Explorer Auto sorting system that imports modules to create
+                a GUI Desktop Application with file handling, folder monitoring, and system tray support. It uses
+                tkinter for interactive GUI elements, os and shutil for file operations, watchdog to observe directory
+                changes, pystray with PIL for a custom system tray icon, and threading to run tasks in the background,
+                while time allows
+                for controlled delays.</p>
+            <div class="project-tools">
+                <span>Python</span> · <span>os</span> · <span>shutil</span> · <span>tkinter</span> ·
+                <span>watchdog</span> · <span>pystray W PIL</span> · <span>threading</span>
+            </div>
+
+        </article>
+
+        <article class="project-card" data-filter="desktop-application" data-skills="Figma TypeScript">
+            <div class="project-image" style="background-image:url('/img/Basic\ Calculator.png');">
+                <span class="fallback-text">Basic Calculator image</span>
+            </div>
+            <h4 class="project-title">Basic Calculator</h4>
+            <p class="project-description">A Basic Calulator Designed to be Desktop Application and it uses Electron,
+                CLI .bat file, Node.js, JS and other packages as the backend and css fo frontend and html as the markup.
+            </p>
+            <div class="project-tools">
+                <span>Html</span> · <span>Css</span> · <span>JS</span> · <span>CLI</span> · <span>Node.js</span> ·
+                <span>Electron</span>
+            </div>
+
         </article>
 
         <!-- Add more projects as needed -->
@@ -94,7 +188,7 @@
     </section>
 
     <!-- SUBFOOTER -->
-    <section class="subfooter container">
+    <section class="subfooter ">
         <h2>Interested in Working Together?</h2>
         <p>I'm always open to discussing product design work or partnership opportunities.</p>
         <a href="contact.html" class="btn btn-primary">Get in Touch</a>
@@ -121,49 +215,9 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/footer.js"></script>
-    <script>
-        // Instant live search and filtering of projects
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('project-search');
-            const filterBtns = document.querySelectorAll('.btn-filter');
-            const projectCards = document.querySelectorAll('.project-card');
-
-            let activeFilter = 'all';
-
-            function filterProjects() {
-                const search = searchInput.value.toLowerCase();
-
-                projectCards.forEach(card => {
-                    const title = card.querySelector('.project-title').textContent.toLowerCase();
-                    const description = card.querySelector('.project-description').textContent.toLowerCase();
-                    const skills = card.dataset.skills.toLowerCase();
-                    const category = card.dataset.filter;
-
-                    const matchesFilter = (activeFilter === 'all') || (category === activeFilter);
-                    const matchesSearch = title.includes(search) || description.includes(search) || skills.includes(search);
-
-                    if (matchesFilter && matchesSearch) {
-                        card.style.display = '';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            }
-
-            // Filter button click
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    activeFilter = btn.dataset.filter;
-                    filterProjects();
-                });
-            });
-
-            // Search input
-            searchInput.addEventListener('input', filterProjects);
-        });
-    </script>
+    <script src="/js/components/theme_selector.js" defer></script>
+    <script src="/js/search_filter.js"></script>
+    <script src="/js/scroll-top.js" defer></script>
 </body>
 
 </html>

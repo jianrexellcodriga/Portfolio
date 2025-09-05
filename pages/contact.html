@@ -14,20 +14,59 @@
 </head>
 
 <body>
-
+    <!-- NAVIGATION (same as index.html) -->
     <header class="nav-header" id="nav-header">
         <nav class="navbar container">
             <a href="/index.html" class="logo">JianDev</a>
             <ul class="nav-links">
                 <li><a href="/index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="contact.html" class="nav-link active">Contact</a></li>
-                <li class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle Dark Mode" role="button"
-                    tabindex="0">
-                    <i class="fas fa-sun"></i>
-                </li>
+                <li><a href="/pages/about.html" class="nav-link">About</a></li>
+                <li><a href="/pages/projects.html" class="nav-link">Projects</a></li>
+                <li><a href="/pages/contact.html" class="nav-link active">Contact</a></li>
+
+
+                <t-theme mode="navbar"></t-theme>
+
             </ul>
+
+            <!-- Updated hamburger menu to use provided SVG icon -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+            <label for="nav-toggle" class="hamburger-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="currentColor">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                </svg>
+            </label>
+
+            <!-- Updated sidebar with close icon inside -->
+            <div class="nav-sidebar">
+                <div class="sidebar-header">
+                    <label for="nav-toggle" class="close-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="currentColor">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg>
+                    </label>
+                </div>
+                <ul class="sidebar-nav-links">
+                    <li><a href="index.html" class="sidebar-nav-link active">Home</a></li>
+                    <li><a href="/pages/about.html" class="sidebar-nav-link">About</a></li>
+                    <li><a href="/pages/projects.html" class="sidebar-nav-link">Projects</a></li>
+                    <li><a href="/pages/contact.html" class="sidebar-nav-link">Contact</a></li>
+
+                </ul>
+                <div class="appearance-toggle">
+                    <t-theme mode="sidebar"></t-theme>
+
+
+
+                </div>
+            </div>
+
+            <!-- Made nav-overlay a label to enable click-outside-to-close functionality -->
+            <label for="nav-toggle" class="nav-overlay"></label>
+
         </nav>
     </header>
 
@@ -38,38 +77,33 @@
         </p>
     </section>
 
-    <section class="container" style="max-width: 600px; margin: 0 auto 4rem auto;">
-
-        <div id="form-message"
-            style="color: var(--color-primary); font-weight: 600; margin-bottom: 1rem; display:none;">Message sent
-            successfully!</div>
-
+    <section class="contact-container">
+        <div id="form-message" class="form-message">Message sent successfully!</div>
+    
         <form id="contact-form" autocomplete="off" novalidate>
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Your name"
-                style="width:100%; padding:0.6rem 1rem; border-radius: 10px; border: 2px solid var(--color-primary); margin-bottom: 1rem; font-size:1rem;" />
-
+            <input type="text" id="name" name="name" required placeholder="Your name" />
+    
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="Your email"
-                style="width:100%; padding:0.6rem 1rem; border-radius: 10px; border: 2px solid var(--color-primary); margin-bottom: 1rem; font-size:1rem;" />
-
+            <input type="email" id="email" name="email" required placeholder="Your email" />
+    
             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required placeholder="Subject"
-                style="width:100%; padding:0.6rem 1rem; border-radius: 10px; border: 2px solid var(--color-primary); margin-bottom: 1rem; font-size:1rem;" />
-
+            <input type="text" id="subject" name="subject" required placeholder="Subject" />
+    
             <label for="message">Message</label>
-            <textarea id="message" name="message" required rows="5" placeholder="Your message"
-                style="width:100%; padding:0.6rem 1rem; border-radius: 10px; border: 2px solid var(--color-primary); margin-bottom: 2rem; font-size:1rem;"></textarea>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%; text-align: center;">Send Message</button>
+            <textarea id="message" name="message" required rows="5" placeholder="Your message"></textarea>
+    
+            <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
-
-        <div style="margin-top: 2rem; font-size: 0.95rem; color: var(--color-text); text-align:center;">
-            <p><strong>Email:</strong> <a href="mailto:contact@jiandev.com"
-                    style="color: var(--color-primary); text-decoration:none;">contact@jiandev.com</a></p>
+    
+        <div class="contact-info">
+            <p><strong>Email:</strong>
+                <a href="mailto:contact@jiandev.com">contact@jiandev.com</a>
+            </p>
             <p><strong>Phone:</strong> (123) 456-7890</p>
         </div>
     </section>
+
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -92,6 +126,8 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/footer.js"></script>
+    <script src="/js/components/theme_selector.js" defer></script>
+    <script src="/js/scroll-top.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('contact-form');

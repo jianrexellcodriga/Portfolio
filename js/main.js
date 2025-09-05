@@ -1,31 +1,31 @@
 // main.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Set initial theme based on user preference or default light
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const html = document.documentElement;
+    // // Set initial theme based on user preference or default light
+    // const darkModeToggle = document.getElementById('dark-mode-toggle');
+    // const html = document.documentElement;
 
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        html.setAttribute('data-theme', 'dark');
-        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    } else {
-        html.removeAttribute('data-theme');
-        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    }
+    // const savedTheme = localStorage.getItem('theme');
+    // if (savedTheme === 'dark') {
+    //     html.setAttribute('data-theme', 'dark');
+    //     darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    // } else {
+    //     html.removeAttribute('data-theme');
+    //     darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    // }
 
-    // Toggle Dark Mode
-    darkModeToggle.addEventListener('click', () => {
-        if (html.getAttribute('data-theme') === 'dark') {
-            html.removeAttribute('data-theme');
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            localStorage.setItem('theme', 'light');
-        } else {
-            html.setAttribute('data-theme', 'dark');
-            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            localStorage.setItem('theme', 'dark');
-        }
-    });
+    // // Toggle Dark Mode
+    // darkModeToggle.addEventListener('click', () => {
+    //     if (html.getAttribute('data-theme') === 'dark') {
+    //         html.removeAttribute('data-theme');
+    //         darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    //         localStorage.setItem('theme', 'light');
+    //     } else {
+    //         html.setAttribute('data-theme', 'dark');
+    //         darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    //         localStorage.setItem('theme', 'dark');
+    //     }
+    // });
 
     // Glassmorphism navbar effect on scroll
     const navHeader = document.getElementById('nav-header');
@@ -83,3 +83,67 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('featured-projects').scrollIntoView({ behavior: 'smooth' });
     });
 });
+
+document.querySelectorAll(".project-image").forEach(div => {
+    const style = div.style.backgroundImage;
+    const match = style.match(/url\(["']?(.*?)["']?\)/);
+
+    if (match && match[1]) {
+        const img = new Image();
+        img.src = match[1];
+        img.onload = () => {
+            div.querySelector(".fallback-text").style.display = "none";
+        };
+        img.onerror = () => {
+            div.querySelector(".fallback-text").style.display = "block";
+        };
+    } else {
+        div.querySelector(".fallback-text").style.display = "block";
+    }
+});
+
+document.querySelectorAll('.project-description').forEach(desc => {
+    const fullText = desc.textContent.trim();
+    const maxLength = 155;
+
+    if (fullText.length > maxLength) {
+        // Find the last space before the cutoff
+        let cutoffIndex = fullText.lastIndexOf(" ", maxLength);
+        if (cutoffIndex === -1) cutoffIndex = maxLength; // fallback if no space found
+
+        const visibleText = fullText.slice(0, cutoffIndex) + "...";
+        const moreText = fullText.slice(cutoffIndex);
+
+        // Set initial state
+        desc.innerHTML = `
+          <span class="visible-text">${visibleText}</span>
+          <span class="more-text" style="display:none;">${moreText}</span>
+          <button class="read-more-btn">Read more</button>
+        `;
+
+        const btn = desc.querySelector('.read-more-btn');
+        const more = desc.querySelector('.more-text');
+        const visible = desc.querySelector('.visible-text');
+
+        btn.addEventListener('click', () => {
+            const expanded = more.style.display === "inline";
+
+            if (expanded) {
+                // Collapse
+                more.style.display = "none";
+                visible.textContent = visibleText;
+                btn.textContent = "Read more";
+            } else {
+                // Expand
+                more.style.display = "inline";
+                visible.textContent = fullText.slice(0, cutoffIndex);
+                btn.textContent = "Read less";
+            }
+        });
+    }
+});
+
+
+
+
+
