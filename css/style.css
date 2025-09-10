@@ -1605,3 +1605,161 @@ body {
         }
     }
 }
+
+/* ================= ABOUT SECTION ================= */
+@layer about {
+    .about-section {
+        max-width: 900px;
+        margin: 2rem auto 4rem auto;
+
+        .section-title {
+            text-align: left;
+            margin-bottom: var(--spacing-sm);
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--gap-lg);
+            align-items: center;
+
+            .about-img {
+                width: 180px;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 20px;
+                box-shadow: 0 0 12px var(--color-primary);
+                flex-shrink: 0;
+
+                @media (max-width: 515px) {
+                    width: auto;
+                    height: auto;
+                    max-width: 100%;
+                }
+            }
+
+            .about-text {
+                flex: 1;
+                font-weight: 400;
+                font-size: var(--font-size-md);
+                line-height: var(--line-height-base);
+                color: var(--color-text);
+
+                @media (max-width: 515px) {
+                    flex: unset;
+                    text-align: left;
+                }
+            }
+
+            @media (max-width: 515px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+}
+/* ================= EDUCATION SECTION ================= */
+@layer education {
+    .education-section {
+        max-width: 900px;
+        margin: 2rem auto 3rem auto;
+
+        .section-title {
+            text-align: left;
+            margin-bottom: var(--spacing-sm);
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+        }
+
+        .education-item {
+            display: flex;
+            align-items: center;
+            gap: var(--gap-md);
+            margin-bottom: var(--spacing-md);
+
+            .education-icon {
+                flex-shrink: 0;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: var(--color-primary);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--color-background);
+                font-size: 1.2rem;
+            }
+
+            .education-text {
+                flex: 1;
+                font-weight: 400;
+                font-size: var(--font-size-md);
+                line-height: var(--line-height-base);
+                color: var(--color-text);
+            }
+
+            @media (max-width: 515px) {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .education-text {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+/* ================= PROFESSIONAL EXPERIENCE SECTION ================= */
+@layer experience {
+    .experience-section {
+        max-width: 900px;
+        margin: 2rem auto 6rem auto;
+
+        .section-title {
+            text-align: left;
+            margin-bottom: var(--spacing-sm);
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+        }
+
+        .experience-item {
+            display: flex;
+            align-items: center;
+            gap: var(--gap-md);
+            margin-bottom: var(--spacing-4xl);
+
+            .experience-icon {
+                flex-shrink: 0;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: var(--color-accent);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--color-background);
+                font-size: 1.2rem;
+            }
+
+            .experience-text {
+                flex: 1;
+                font-weight: 400;
+                font-size: var(--font-size-md);
+                line-height: var(--line-height-base);
+                color: var(--color-text);
+            }
+
+            @media (max-width: 515px) {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .experience-text {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
