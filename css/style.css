@@ -248,7 +248,7 @@ body {
     position: absolute;
     top: 100%;
     /* below toggle */
-    right: 4vw;
+    right: 5vw;
     left: auto;
     /* align right */
     background: var(--color-card);
