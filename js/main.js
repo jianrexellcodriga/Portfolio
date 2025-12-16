@@ -147,7 +147,7 @@ document.getElementById("downloadCV").addEventListener("click", () => {
     const repo = window.location.pathname.split("/")[1];
 
     const link = document.createElement("a");
-    link.href = `/${repo}/assets/Resume_CV.docx`;
+    link.href = `https://github.com/jianrexellcodriga/Portfolio/blob/main/assets/Resume_CV.docx?raw=true`;
     link.setAttribute("download", "My_CV.docx");
 
     document.body.appendChild(link);
