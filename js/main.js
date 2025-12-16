@@ -145,7 +145,7 @@ document.querySelectorAll('.project-description').forEach(desc => {
 
 document.getElementById("downloadCV").addEventListener("click", () => {
     const link = document.createElement("a");
-    link.href = "/assets/Resume_CV.docx";   // your file path
+    link.href = "../assets/Resume_CV.docx";   // your file path
     link.download = "Resume_CV.docx";       // suggested filename
     document.body.appendChild(link);
     link.click();
