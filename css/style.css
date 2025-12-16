@@ -250,23 +250,23 @@
         /* optional spacing */
     }
 
-    .dropdown-theme {
-        display: none;
-        position: absolute;
-        top: 100%;
-        /* below toggle */
-        right: 4vw;
-        left: auto;
-        /* align right */
-        background: var(--color-card);
-        padding: 0.5rem;
-        list-style: none;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        min-width: 130px;
-        /* optional, adjust to content */
-        z-index: 10000;
-    }
+.dropdown-theme {
+    display: none;
+    position: absolute;
+    top: 100%;
+    /* below toggle */
+    right: 4vw;
+    left: auto;
+    /* align right */
+    background: var(--color-card);
+    padding: 0.5rem;
+    list-style: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 130px;
+    /* optional, adjust to content */
+    z-index: 10000;
+}
 
     .dropdown-theme li {
         cursor: pointer;
