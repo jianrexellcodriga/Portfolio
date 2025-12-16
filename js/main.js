@@ -144,13 +144,17 @@ document.querySelectorAll('.project-description').forEach(desc => {
 });
 
 document.getElementById("downloadCV").addEventListener("click", () => {
+    const repo = window.location.pathname.split("/")[1];
+
     const link = document.createElement("a");
-    link.href = "/${base}/assets/Resume_CV.docx";   // your file path
-    link.download = "Resume_CV.docx";       // suggested filename
+    link.href = `/${repo}/assets/Resume_CV.docx`;
+    link.setAttribute("download", "My_CV.docx");
+
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 });
+
 
 
 
